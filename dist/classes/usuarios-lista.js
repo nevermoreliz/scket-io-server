@@ -23,7 +23,7 @@ class UsuariosLista {
     }
     /* Obtener toda la Lista de Usuarios conextados */
     getLista() {
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'sin-nombre');
     }
     /* Obtener un Uusario */
     getUsuario(id) {

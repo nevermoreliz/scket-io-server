@@ -49,13 +49,15 @@ class Server {
             // console.log('Cliente conectado');
             // console.log(cliente.id);
             /* Conectar Cliente */
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
             /* Configurar Usuario */
             socket.configurarUsuario(cliente, this.io);
+            /* Obtener Usuarios activos */
+            socket.obtenerUsuarios(cliente, this.io);
             // Escuchar Mensajes
             socket.mensaje(cliente, this.io);
             // Desconectar socket
-            socket.desconectar(cliente);
+            socket.desconectar(cliente, this.io);
         });
     }
     start(callback) {
